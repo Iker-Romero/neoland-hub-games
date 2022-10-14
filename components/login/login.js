@@ -3,10 +3,12 @@ export const login = () => {
   app.insertAdjacentHTML(
     "beforeend",
     `
-    <h1>NEOLAND HUB-GAMES</h1>
-    <label for="name">Introduce tu nombre:</label>
-    <input type="text" id="name">
-    <button id="submitName">👍</button>
+    <div class="login">
+      <h1>NEOLAND HUB-GAMES</h1>
+      <label for="name">Introduce tu nombre:</label>
+      <input type="text" id="name">
+      <button id="submitName">👍</button>
+    </div>
     `
   );
   const input = document.querySelector("#name");
