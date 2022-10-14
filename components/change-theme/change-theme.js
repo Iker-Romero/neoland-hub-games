@@ -1,3 +1,5 @@
+import { randomColor } from "../random-color/random-color";
+
 export const changeTheme = () => {
   const app = document.querySelector("#app");
   app.classList.add("theme");
@@ -12,9 +14,6 @@ export const changeTheme = () => {
   );
   const div = document.querySelector(".change-theme");
   div.addEventListener("click", () => {
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    app.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    randomColor();
   });
 };
