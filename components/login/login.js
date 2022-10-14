@@ -19,10 +19,9 @@ export const login = () => {
     const input = document.querySelector("#name");
     const button = document.querySelector("#submitName");
     button.addEventListener("click", () => {
-      console.log(input.value);
-      if (button.value !== "" || typeof input.value === "string") {
+      if ((button.value !== "") === false && typeof input.value == "string") {
         localStorage.setItem("name", input.value.trim());
-        document.querySelector(".login").remove()
+        document.querySelector(".login").remove();
         hub();
       } else {
         alert("Introduce un nombre de usuario válido.");
