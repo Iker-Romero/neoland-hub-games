@@ -1,5 +1,5 @@
 export const ticTacToe = () => {
-  const layout = `
+  const template = `
   <main>
     <h1>⭕ 3 EN RAYA ❌</h1>
     <div class="squares-container">
@@ -15,6 +15,6 @@ export const ticTacToe = () => {
     </div>
   </main>
   `
-  const target = document.querySelector(".change-theme");
-  target.insertAdjacentHTML("afterend", layout);
+  const target = document.querySelector("nav");
+  target.insertAdjacentHTML("afterend", template);
 }

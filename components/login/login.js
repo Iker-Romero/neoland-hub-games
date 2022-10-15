@@ -4,7 +4,7 @@ export const login = () => {
   if (localStorage.name) {
     hub();
   } else {
-    const layout = `
+    const template = `
     <main class="login">
       <h1>NEOLAND HUB-GAMES</h1>
       <label for="name">Introduce tu nombre:</label>
@@ -13,12 +13,12 @@ export const login = () => {
     </main>
     `;
 
-    const target = document.querySelector(".change-theme");
-    target.insertAdjacentHTML("afterend", layout);
+    const target = document.querySelector("nav");
+    target.insertAdjacentHTML("afterend", template);
 
     const input = document.querySelector("#name");
     const button = document.querySelector("#submitName");
-    
+
     button.addEventListener("click", () => {
       if ((button.value !== "") === false && typeof input.value == "string") {
         localStorage.setItem("name", input.value.trim());

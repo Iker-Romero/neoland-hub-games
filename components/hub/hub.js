@@ -1,7 +1,7 @@
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 
 export const hub = () => {
-  const layout = `
+  const template = `
   <main>
     <h1>¡Bienvenido 👋 ${localStorage.name}!</h1>
     <div class="games-container">
@@ -12,8 +12,8 @@ export const hub = () => {
   </main>
   `;
 
-  const target = document.querySelector(".change-theme");
-  target.insertAdjacentHTML("afterend", layout);
+  const target = document.querySelector("nav");
+  target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
   const gamesComponents = [ticTacToe];
