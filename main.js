@@ -5,8 +5,9 @@ import "./style.css";
 
 const init = () => {
   randomColor();
-  changeTheme();
   login();
+  changeTheme();
+  
 };
 
 init();

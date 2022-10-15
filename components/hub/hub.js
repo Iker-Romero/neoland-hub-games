@@ -1,17 +1,22 @@
 export const hub = () => {
-  const greeting = `
+
+  const layout = `
   <h1>¡Bienvenido 👋 ${localStorage.name}!</h1>
-  `;
-  let gamesDiv = document.createElement("div");
-  gamesDiv.classList.add("games-div");
-  gamesDiv = `
-  <div class="game">
-    <p>3 en Raya</p>
+  <div class="games-container">
+    <div class="game">
+      <p>3 en Raya</p>
+    </div>  
   </div>
   `;
+
   const app = document.querySelector("#app");
-  app.innerHTML += `
-  ${greeting}
-  ${gamesDiv}
-  `;
+  app.innerHTML += layout;
+
+  const gamesComponents = [];
+  const games = document.querySelectorAll(".game");
+  games.forEach((game, i) => {
+    game.addEventListener("click", () => {
+      gamesComponents[i];
+    });
+  });
 };

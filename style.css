@@ -141,6 +141,14 @@ table {
   flex-direction: column;
 }
 
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  align-self: center;
+}
+
 input,
 select,
 option,
@@ -199,4 +207,20 @@ button {
 
 #submitName {
   width: 5rem;
+}
+
+/* GAMES HUB */
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  justify-content: center;
+}
+
+.game {
+  background-color: white;
+  aspect-ratio: 1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
