@@ -165,8 +165,6 @@ button {
   max-width: 10rem;
 }
 
-
-
 /* NAV */
 
 nav {
@@ -175,10 +173,18 @@ nav {
   padding: 1rem;
 }
 
-nav > span {
+/* Hub Button */
+
+.hub-button {
+  all: unset;
   font-size: 3rem;
   font-weight: bold;
   align-self: center;
+}
+
+.hub-button:hover {
+  filter: opacity(0.8);
+  cursor: pointer;
 }
 
 /* Change Theme */
