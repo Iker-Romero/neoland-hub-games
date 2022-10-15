@@ -38,7 +38,46 @@ export const ticTacToe = () => {
       </tbody>
     </table>
   </main>
-  `
+  `;
+
   const target = document.querySelector("nav");
   target.insertAdjacentHTML("afterend", template);
-}
+
+  const squares = document.querySelectorAll(".square");
+
+  let userMoves = 3;
+
+  let computerMoves = 3;
+
+  const computerMove = () => {
+    const availableSquares = squares.filter((square) => {
+      return square.innerHTML === "";
+    });
+    const randomSquare =
+      availableSquares[Math.floor(Math.random() * availableSquares.length)];
+    randomSquare.innerHTML = "❌";
+  };
+
+  squares.forEach((square) => {
+    square.addEventListener("click", () => {
+      console.log("FUNCIONANDO");
+      if (square.innerHTML === "⭕") {
+        square.innerHTML = "";
+        userMoves++;
+      } else if (userMoves > 0) {
+        if (square.innerHTML === "") {
+          square.innerHTML = "⭕";
+          userMoves--;
+        } else {
+          alert("Esta casilla ya está ocupada.");
+        }
+      } else {
+        alert(
+          "Se han agotado las fichas, escoge una que ya hayas colocado para recuperarla."
+        );
+      }
+    });
+  });
+
+  
+};

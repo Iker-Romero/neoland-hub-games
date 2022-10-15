@@ -274,45 +274,33 @@ footer img {
 
 /* TIC-TAC-TOE */
 
-/* .squares-container {
-  flex: 1 1 auto;
-  display: grid;
-  height: max-content;
-  justify-content: center;
-  grid-template-columns: repeat(3, calc(100vh / 4));
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-.square {
-  background-color: white;
-  aspect-ratio: 1;
-  border: 0.5rem solid black;
-  border-collapse: collapse;
-} */
-
 @media screen and (orientation: landscape) {
   .squares-container {
-    width: calc((100vh / 4 * 3));
+    width: calc(100vh / 4 * 3);
+    align-self: center;
+    table-layout: fixed;
+    font-size: 15vh;
   }
 
   .square {
     background-color: white;
     border: 0.5rem solid black;
     height: calc((100vh / 4));
-    aspect-ratio: 1;
   }
 }
 
 @media screen and (orientation: portrait) {
-
   .squares-container {
-    height: 100vw;
+    height: calc(100vw - 2rem);
+    max-height: 100vh;
+    align-self: center;
+    table-layout: fixed;
   }
+}
 
-  .square {
-    background-color: white;
-    border: 0.5rem solid black;
-    width: calc(100vw / 3);
-    aspect-ratio: 1;
-  }
+.square {
+  background-color: white;
+  border: 0.5rem solid black;
+  text-align: center;
+  vertical-align: middle;
 }
