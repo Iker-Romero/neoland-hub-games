@@ -141,6 +141,12 @@ table {
   flex-direction: column;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+}
+
 h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -180,6 +186,24 @@ button {
 
 .change-theme > img {
   height: 100%;
+}
+
+.change-theme:hover {
+  filter: opacity(0.8);
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  height: 4rem;
 }
 
 /* LOGIN */
@@ -223,4 +247,21 @@ button {
   display: grid;
   align-items: center;
   justify-content: center;
+}
+
+/* TIC-TAC-TOE */
+
+.squares-container {
+  flex: 1 1 auto;
+  display: grid;
+  height: max-content;
+  justify-content: center;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.square {
+  background-color: white;
+  aspect-ratio: 1;
+  border: 0.5rem solid black;
 }

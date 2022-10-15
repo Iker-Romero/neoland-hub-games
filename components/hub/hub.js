@@ -1,22 +1,28 @@
-export const hub = () => {
+import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 
+export const hub = () => {
   const layout = `
-  <h1>¡Bienvenido 👋 ${localStorage.name}!</h1>
-  <div class="games-container">
-    <div class="game">
-      <p>3 en Raya</p>
-    </div>  
-  </div>
+  <main>
+    <h1>¡Bienvenido 👋 ${localStorage.name}!</h1>
+    <div class="games-container">
+      <div class="game">
+        <p>⭕ 3 EN RAYA ❌</p>
+      </div>  
+    </div>
+  </main>
   `;
 
-  const app = document.querySelector("#app");
-  app.innerHTML += layout;
+  const target = document.querySelector(".change-theme");
+  target.insertAdjacentHTML("afterend", layout);
 
-  const gamesComponents = [];
+  // Array of functions for the scalability of games
+  const gamesComponents = [ticTacToe];
+
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {
     game.addEventListener("click", () => {
-      gamesComponents[i];
+      document.querySelector("main").remove();
+      gamesComponents[i]();
     });
   });
 };
