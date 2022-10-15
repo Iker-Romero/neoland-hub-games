@@ -145,6 +145,7 @@ h1 {
   font-weight: bold;
   margin: 2rem;
   align-self: center;
+  text-align: center;
 }
 
 input,
@@ -222,6 +223,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 footer img {
@@ -272,12 +274,12 @@ footer img {
 
 /* TIC-TAC-TOE */
 
-.squares-container {
+/* .squares-container {
   flex: 1 1 auto;
   display: grid;
   height: max-content;
   justify-content: center;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(3, calc(100vh / 4));
   grid-template-rows: 1fr 1fr 1fr;
 }
 
@@ -285,4 +287,32 @@ footer img {
   background-color: white;
   aspect-ratio: 1;
   border: 0.5rem solid black;
+  border-collapse: collapse;
+} */
+
+@media screen and (orientation: landscape) {
+  .squares-container {
+    width: calc((100vh / 4 * 3));
+  }
+
+  .square {
+    background-color: white;
+    border: 0.5rem solid black;
+    height: calc((100vh / 4));
+    aspect-ratio: 1;
+  }
+}
+
+@media screen and (orientation: portrait) {
+
+  .squares-container {
+    height: 100vw;
+  }
+
+  .square {
+    background-color: white;
+    border: 0.5rem solid black;
+    width: calc(100vw / 3);
+    aspect-ratio: 1;
+  }
 }
