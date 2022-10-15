@@ -141,12 +141,6 @@ table {
   flex-direction: column;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  flex: 0 1 auto;
-}
-
 h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -193,10 +187,18 @@ button {
   cursor: pointer;
 }
 
+/* MAIN */
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
 /* FOOTER */
 
 footer {
-  height: 4rem;
+  flex: 0 1 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
