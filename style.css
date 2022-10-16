@@ -291,6 +291,8 @@ footer img {
     background-color: white;
     border: 0.5rem solid black;
     height: calc((100vh / 4));
+    text-align: center;
+    vertical-align: middle;
   }
 }
 
@@ -301,13 +303,14 @@ footer img {
     align-self: center;
     table-layout: fixed;
   }
-}
-
-.square {
-  background-color: white;
-  border: 0.5rem solid black;
-  text-align: center;
-  vertical-align: middle;
+  .square {
+    background-color: white;
+    border: 0.5rem solid black;
+    width: calc(100vw / 3);
+    aspect-ratio: 1;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 
 /* MEMORY: MATCHING PAIRS */
