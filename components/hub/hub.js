@@ -1,4 +1,4 @@
-import { matchingMemory } from "../matching-memory/matching-memory";
+import { matchingMemory } from "../matching-pairs/matching-pairs";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 
 export const hub = () => {

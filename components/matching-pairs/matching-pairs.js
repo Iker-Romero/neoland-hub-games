@@ -1,4 +1,4 @@
-export const matchingMemory = () => {
+export const matchingPairs = () => {
   const template = `
   <main class="memory">
     <h1>🍉 Memory: Matching Pairs 👨‍🤝‍👩</h1>
