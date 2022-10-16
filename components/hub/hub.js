@@ -1,3 +1,4 @@
+import { matchingMemory } from "../matching-memory/matching-memory";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 
 export const hub = () => {
@@ -6,8 +7,11 @@ export const hub = () => {
     <h1>¡Bienvenido 👋 ${localStorage.name}!</h1>
     <div class="games-container">
       <div class="game">
-        <p>⭕ 3 EN RAYA ❌</p>
-      </div>  
+        <p>⭕ TIC-TAC-TOE ❌</p>
+      </div>
+      <div class="game">
+        <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
+      </div>   
     </div>
   </main>
   `;
@@ -16,7 +20,7 @@ export const hub = () => {
   target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
-  const gamesComponents = [ticTacToe];
+  const gamesComponents = [ticTacToe, matchingMemory];
 
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {
