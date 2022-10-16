@@ -1,4 +1,4 @@
-import { matchingMemory } from "../matching-pairs/matching-pairs";
+import { matchingPairs } from "../matching-pairs/matching-pairs";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 
 export const hub = () => {
@@ -20,7 +20,7 @@ export const hub = () => {
   target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
-  const gamesComponents = [ticTacToe, matchingMemory];
+  const gamesComponents = [ticTacToe, matchingPairs];
 
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {

@@ -33,26 +33,28 @@ export const ticTacToe = () => {
 
   squaresNodeList.forEach((square) => {
     square.addEventListener("click", () => {
-
-      console.log(userMoves)
-
-      if (square.innerHTML === "⭕" && userMoves === 0) {
-        square.innerHTML = "";
-        userMoves++;
-      } else if (userMoves > 0) {
+      if (userMoves > 0) {
         if (square.innerHTML === "") {
           square.innerHTML = "⭕";
           userMoves--;
-          computerMove();
-          if (winCheck("⭕")  === true) {
-            alert("¡ENHORABUENA HAS GANADO!");
-          }
+
+          // Delay para darle tiempo a la casilla de rellenarse antes del alert() de victoria
+          setTimeout(() => {
+            if (userMoves === 0 && winCheck("⭕") === true) {
+              return alert("¡ENHORABUENA HAS GANADO!");
+            } else {
+              computerMove();
+            }
+          }, 100)
         } else {
           alert("Esta casilla ya está ocupada.");
         }
+      } else if (square.innerHTML === "⭕") {
+        square.innerHTML = "";
+        userMoves++;
       } else {
         alert(
-          "Se han agotado las fichas, escoge una que ya hayas colocado para recuperarla."
+          "No te quedan fichas, escoge una que ya hayas colocado para recuperarla."
         );
       }
     });
@@ -68,18 +70,24 @@ export const ticTacToe = () => {
       const availableSquares = squares.filter((square) => {
         return square.innerHTML === "";
       });
+
       const randomSquare =
         availableSquares[Math.floor(Math.random() * availableSquares.length)];
+        
       randomSquare.innerHTML = "❌";
-    } else if (winCheck("❌")) {
-      alert("El rival ha ganado.");
+
+      if (userMoves === 0 && winCheck("⭕") === true) {
+        return alert("El rival ha ganado.");
+      }
     } else {
       const ownSquares = squares.filter((square) => {
         return square.innerHTML === "❌";
-      })
-      const takeRandom = ownSquares[Math.floor(Math.random() * ownSquares.length)];
+      });
+      const takeRandom =
+        ownSquares[Math.floor(Math.random() * ownSquares.length)];
       takeRandom.innerHTML = "";
       computerMoves++;
+      computerMove()
     }
   };
 
@@ -124,17 +132,16 @@ export const ticTacToe = () => {
     let winner;
 
     combinations.forEach((combination) => {
-      
-      console.log(situation)
-      console.log(combination)
+      console.log(situation);
+      console.log(combination);
 
-      console.log(situation === combination)
+      console.log(situation === combination);
 
-      if (situation === combination) {
+      if (situation.toString() === combination.toString()) {
         console.log("winner");
         winner = true;
       }
     });
     return winner;
-  }
+  };
 };
