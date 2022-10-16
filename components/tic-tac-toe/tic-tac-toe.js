@@ -5,19 +5,19 @@ export const ticTacToe = () => {
     <table class="squares-container">
       <tbody>
         <tr>
-          <td class="square" id="square1"></td>
-          <td class="square" id="square1"></td>
-          <td class="square" id="square1"></td>
+          <td class="square"></td>
+          <td class="square"></td>
+          <td class="square"></td>
         </tr>
         <tr>
-          <td class="square" id="square1"></td>
-          <td class="square" id="square1"></td>
-          <td class="square" id="square1"></td>
+          <td class="square"></td>
+          <td class="square"></td>
+          <td class="square"></td>
         </tr>
         <tr>
-          <td class="square" id="square1"></td>
-          <td class="square" id="square1"></td>
-          <td class="square" id="square1"></td>
+          <td class="square"></td>
+          <td class="square"></td>
+          <td class="square"></td>
         </tr>
       </tbody>
     </table>
@@ -41,11 +41,12 @@ export const ticTacToe = () => {
           // Delay para darle tiempo a la casilla de rellenarse antes del alert() de victoria
           setTimeout(() => {
             if (userMoves === 0 && winCheck("⭕") === true) {
-              return alert("¡ENHORABUENA HAS GANADO!");
+              alert("¡ENHORABUENA HAS GANADO!");
+              ticTacToe()
             } else {
               computerMove();
             }
-          }, 100)
+          }, 100);
         } else {
           alert("Esta casilla ya está ocupada.");
         }
@@ -73,27 +74,33 @@ export const ticTacToe = () => {
 
       const randomSquare =
         availableSquares[Math.floor(Math.random() * availableSquares.length)];
-        
+
       randomSquare.innerHTML = "❌";
 
-      if (userMoves === 0 && winCheck("⭕") === true) {
-        return alert("El rival ha ganado.");
-      }
+      computerMoves--;
+
+      // Delay para darle tiempo a la casilla de rellenarse antes del alert() de victoria
+      setTimeout(() => {
+        if (userMoves === 0 && winCheck("❌") === true) {
+          alert("El rival ha ganado.");
+          ticTacToe()
+        }
+      }, 100);
     } else {
       const ownSquares = squares.filter((square) => {
         return square.innerHTML === "❌";
       });
+
       const takeRandom =
         ownSquares[Math.floor(Math.random() * ownSquares.length)];
       takeRandom.innerHTML = "";
+
       computerMoves++;
-      computerMove()
+      computerMove();
     }
   };
 
   const winCheck = (player) => {
-    console.log("WINCHECK");
-
     const combinations = [
       [1, 1, 1,
       0, 0, 0,
@@ -132,16 +139,11 @@ export const ticTacToe = () => {
     let winner;
 
     combinations.forEach((combination) => {
-      console.log(situation);
-      console.log(combination);
-
-      console.log(situation === combination);
-
       if (situation.toString() === combination.toString()) {
-        console.log("winner");
         winner = true;
       }
     });
+
     return winner;
   };
 };
