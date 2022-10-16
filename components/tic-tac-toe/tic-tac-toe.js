@@ -42,7 +42,10 @@ export const ticTacToe = () => {
           setTimeout(() => {
             if (userMoves === 0 && winCheck("⭕") === true) {
               alert("¡ENHORABUENA HAS GANADO!");
-              ticTacToe()
+
+              document.querySelector("main").remove();
+
+              ticTacToe();
             } else {
               computerMove();
             }
@@ -81,9 +84,12 @@ export const ticTacToe = () => {
 
       // Delay para darle tiempo a la casilla de rellenarse antes del alert() de victoria
       setTimeout(() => {
-        if (userMoves === 0 && winCheck("❌") === true) {
+        if (computerMoves === 0 && winCheck("❌") === true) {
           alert("El rival ha ganado.");
-          ticTacToe()
+
+          document.querySelector("main").remove();
+
+          ticTacToe();
         }
       }, 100);
     } else {

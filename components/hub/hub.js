@@ -4,7 +4,7 @@ import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 export const hub = () => {
   const template = `
   <main>
-    <h1>¡Bienvenido 👋 ${localStorage.name}!</h1>
+    <h1>¡Bienvenido/a 👋 ${localStorage.name}!</h1>
     <div class="games-container">
       <div class="game">
         <p>⭕ TIC-TAC-TOE ❌</p>
