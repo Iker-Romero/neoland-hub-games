@@ -24,7 +24,7 @@ export const ticTacToe = () => {
   </main>
   `;
 
-  const target = document.querySelector("nav");
+  const target = document.querySelector("header");
   target.insertAdjacentHTML("afterend", template);
 
   const squaresNodeList = document.querySelectorAll(".square");

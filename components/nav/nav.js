@@ -2,9 +2,11 @@ import { hub } from "../hub/hub";
 
 export const nav = () => {
   const template = `
-  <nav>
-    <button class="hub-button">HUB</button>
-  </nav>
+  <header>
+    <nav>
+      <button class="hub-button">HUB</button>
+    </nav>
+  </header>
   `;
   const target = document.querySelector("#app");
   target.insertAdjacentHTML("afterbegin", template);

@@ -16,7 +16,7 @@ export const hub = () => {
   </main>
   `;
 
-  const target = document.querySelector("nav");
+  const target = document.querySelector("header");
   target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
