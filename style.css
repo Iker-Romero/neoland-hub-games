@@ -282,15 +282,17 @@ footer img {
 @media screen and (orientation: landscape) {
   .squares-container {
     width: calc(100vh / 4 * 3);
-    align-self: center;
+    aspect-ratio: 1;
     table-layout: fixed;
     font-size: 15vh;
+    align-self: center;
   }
 
   .square {
+    height: calc((100vh / 4));
     background-color: white;
     border: 0.5rem solid black;
-    height: calc((100vh / 4));
+    font-size: calc(100vh * 1 / 6);
     text-align: center;
     vertical-align: middle;
   }
@@ -298,16 +300,17 @@ footer img {
 
 @media screen and (orientation: portrait) {
   .squares-container {
-    height: calc(100vw - 2rem);
-    max-height: 100vh;
-    align-self: center;
+    width: calc(100vw - 2rem);
+    aspect-ratio: 1;
     table-layout: fixed;
+    font-size: 15vw;
+    align-self: center;
   }
   .square {
+    height: calc((100vw - 2rem) / 3);
     background-color: white;
     border: 0.5rem solid black;
-    width: calc(100vw / 3);
-    aspect-ratio: 1;
+    font-size: calc((100vw - 2rem) * 2 / 9);
     text-align: center;
     vertical-align: middle;
   }
