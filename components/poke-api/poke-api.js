@@ -14,10 +14,6 @@ export const pokeAPI = async () => {
     const target = document.querySelector("header");
     target.insertAdjacentHTML("afterend", template);
 
-    const pokemonsIndex = await getData(
-      "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
-    );
-
     const typesColors = {
       bug: "#ABB842",
       dark: "#6C594A",
@@ -41,6 +37,10 @@ export const pokeAPI = async () => {
       water: "#B8B8CE"
     };
 
+    const pokemonsIndex = await getData(
+      "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
+    );
+
     pokemonsIndex.results.forEach(async (pokemonEntrance, index) => {
       try {
         const pokemonURL = pokemonEntrance.url;
@@ -61,7 +61,7 @@ export const pokeAPI = async () => {
         const figure = `
           <figure>
             <figcaption>${name.toUpperCase()}</figcaption>
-            <div class="default-container">
+            <div class="image-container">
               <img src="${defaultIMG}" alt="Default pokemon image" class="default-image">
             </div>
             <div class="types">
@@ -74,7 +74,7 @@ export const pokeAPI = async () => {
         pokemonsContainer.insertAdjacentHTML("beforeend", figure);
 
         if (shinyIMG) {
-          const defaultContainer = document.querySelectorAll(".default-container")[index];
+          const defaultContainer = document.querySelectorAll(".image-container")[index];
           
           defaultContainer.insertAdjacentHTML("afterend", `
           <img src="${shinyIMG}" alt="Shiny pokemon image" class="shiny-image">
