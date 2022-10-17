@@ -13,18 +13,19 @@ export const hub = () => {
       <div class="game">
         <p>POKE API</p>
       </div>
-      // <div class="game">
-      //   <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
-      // </div>
     </div>
   </main>
   `;
+  // <div class="game">
+  //   <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
+  // </div>
 
   const target = document.querySelector("header");
   target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
-  const gamesComponents = [ticTacToe, pokeAPI, matchingPairs];
+  const gamesComponents = [ticTacToe, pokeAPI];
+  // matchingPairs
 
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {
