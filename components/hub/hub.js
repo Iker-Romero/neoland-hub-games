@@ -13,9 +13,9 @@ export const hub = () => {
       <div class="game">
         <p>POKE API</p>
       </div>
-      <div class="game">
-        <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
-      </div>
+      // <div class="game">
+      //   <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
+      // </div>
     </div>
   </main>
   `;
