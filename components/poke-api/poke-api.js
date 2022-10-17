@@ -50,7 +50,7 @@ export const pokeAPI = async () => {
           name,
           sprites: {
             other: {
-              home: { front_default: defaultIMG, front_hiny: shinyIMG },
+              home: { front_default: defaultIMG, front_shiny: shinyIMG },
             },
           },
           // types.forEach((type) => {
@@ -60,9 +60,10 @@ export const pokeAPI = async () => {
 
         const figure = `
           <figure>
-            <figcaption>${name}</figcaption>
-            <img src="${defaultIMG}" alt="Default pokemon image" class="default-image">
-            <img src="${shinyIMG}" alt="Shiny pokemon image" class="shiny-image">
+            <figcaption>${name.toUpperCase()}</figcaption>
+            <div class="default-container">
+              <img src="${defaultIMG}" alt="Default pokemon image" class="default-image">
+            </div>
             <div class="types">
 
             </div>
@@ -72,19 +73,23 @@ export const pokeAPI = async () => {
         const pokemonsContainer = document.querySelector(".pokemons-container")
         pokemonsContainer.insertAdjacentHTML("beforeend", figure);
 
-        const typesDiv = document.querySelectorAll(".types")[index];
+        if (shinyIMG) {
+          const defaultContainer = document.querySelectorAll(".default-container")[index];
+          
+          defaultContainer.insertAdjacentHTML("afterend", `
+          <img src="${shinyIMG}" alt="Shiny pokemon image" class="shiny-image">
+          `);
+        }
 
-        console.log(types)
+        const typesDiv = document.querySelectorAll(".types")[index];
 
         types.forEach((slot) => {
           const { type } = slot;
-          
-          console.log(typesDiv)
-          console.log(type.name)
 
           const template = `
           <p style="background-color:${typesColors[type.name]};">${type.name.toUpperCase()}</p>
           `;
+
           typesDiv.insertAdjacentHTML("afterbegin", template);
         });
 
