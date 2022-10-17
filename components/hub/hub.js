@@ -1,4 +1,5 @@
 import { matchingPairs } from "../matching-pairs/matching-pairs";
+import { pokeAPI } from "../poke-api/poke-api";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 
 export const hub = () => {
@@ -10,8 +11,11 @@ export const hub = () => {
         <p>⭕ TIC-TAC-TOE ❌</p>
       </div>
       <div class="game">
+        <p>POKE API</p>
+      </div>
+      <div class="game">
         <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
-      </div>   
+      </div>
     </div>
   </main>
   `;
@@ -20,7 +24,7 @@ export const hub = () => {
   target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
-  const gamesComponents = [ticTacToe, matchingPairs];
+  const gamesComponents = [ticTacToe, pokeAPI, matchingPairs];
 
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {
