@@ -41,11 +41,39 @@ export const pokeAPI = async () => {
           types,
         } = pokemon;
 
-        const typesDiv = document.querySelector(".types")
+        typesColors = {
+          bug: "#ABB842",
+          dark: "#6C594A",
+          dragon: "#6D48D2",
+          electric: "F2D153",
+          fairy: "#ECA4DD",
+          fight: "#85372D",
+          fire: "#DE5C3D",
+          flying: "##A491EA",
+          ghost: "#6C5994",
+          grass: "#8BC660",
+          ground: "#DBC174",
+          ice: "#A6D6D7",
+          normal: "#A8A87D",
+          poison: "#97489C",
+          psychic: "#E66388",
+          rock: "#B4A14A",
+          shadow: "#3E3345",
+          steel: "#B8B8CE",
+          uknown: "#B8B8CE",
+          water: "#B8B8CE"
+        };
+
+        const typesDiv = document.querySelector(".types");
         types.forEach((slot) => {
-          const {type} = slot
-          typesDiv.insertAdjacentHTML("afterbegin", type);
-        })
+          const { type } = slot;
+          typesDiv.insertAdjacentHTML(
+            "afterbegin",
+            `
+            <p>${type}</p>
+            `
+          );
+        });
       } catch (error) {
         console.log(error);
       }
