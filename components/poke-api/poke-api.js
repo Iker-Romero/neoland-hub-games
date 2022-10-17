@@ -15,7 +15,7 @@ export const pokeAPI = async () => {
     target.insertAdjacentHTML("afterend", template);
 
     const pokemonsIndex = await getData(
-      "https://pokeapi.co/api/v2/pokemon?limit=150&offset=0"
+      "https://pokeapi.co/api/v2/pokemon?limit=151&offset=0"
     );
 
     const typesColors = {
@@ -41,7 +41,7 @@ export const pokeAPI = async () => {
       water: "#B8B8CE"
     };
 
-    pokemonsIndex.results.forEach(async (pokemonEntrance) => {
+    pokemonsIndex.results.forEach(async (pokemonEntrance, index) => {
       try {
         const pokemonURL = pokemonEntrance.url;
         const pokemon = await getData(pokemonURL);
@@ -70,17 +70,22 @@ export const pokeAPI = async () => {
           `;
 
         const pokemonsContainer = document.querySelector(".pokemons-container")
-        pokemonsContainer.insertAdjacentHTML("afterbegin", figure);
+        pokemonsContainer.insertAdjacentHTML("beforeend", figure);
 
-        const typesDiv = document.querySelector(".types");
+        const typesDiv = document.querySelectorAll(".types")[index];
+
+        console.log(types)
+
         types.forEach((slot) => {
           const { type } = slot;
-          typesDiv.insertAdjacentHTML(
-            "afterbegin",
-            `
-            <p style="backgroundColor: ${typesColors.type.name}>${type.name.toUpperCase()}</p>
-            `
-          );
+          
+          console.log(typesDiv)
+          console.log(type.name)
+
+          const template = `
+          <p style="background-color:${typesColors[type.name]};">${type.name.toUpperCase()}</p>
+          `;
+          typesDiv.insertAdjacentHTML("afterbegin", template);
         });
 
       } catch (error) {
