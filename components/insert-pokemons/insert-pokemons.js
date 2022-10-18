@@ -36,7 +36,7 @@ export const insertPokemons = (array) => {
 
   array.forEach(async (pokemon, i) => {
     const figure = `
-          <figure>
+          <figure style="background-color:${typesColors[pokemon.types[0]]};">
             <figcaption>${pokemon.name.toUpperCase()}</figcaption>
             <div class="image-container">
               <img src="${pokemon.defaultImg}" alt="Default pokemon image" class="default-image">
@@ -71,7 +71,7 @@ export const insertPokemons = (array) => {
           };">${type.toUpperCase()}</p>
           `;
 
-      typesDiv.insertAdjacentHTML("afterbegin", template);
+      typesDiv.insertAdjacentHTML("beforeend", template);
     });
   });
 };

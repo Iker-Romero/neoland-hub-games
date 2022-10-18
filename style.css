@@ -142,6 +142,7 @@ table {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 h1 {
@@ -227,6 +228,7 @@ main {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
+  padding: 0.5rem;
 }
 
 /* FOOTER */
@@ -327,7 +329,44 @@ footer img {
 
 /* POKE API */
 
+.pokemons-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
+  grid-gap: 1rem;
+}
 
+.pokemons-container figure {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.pokemons-container figure figcaption {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.image-container {
+  width: 100%;
+  object-fit: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.image-container img {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.33);
+}
+
+.types {
+  display: flex;
+  text-align: center;
+}
+
+.types > p {
+  flex-grow: 1;
+  padding: 0.5rem;
+}
 
 /* MEMORY: MATCHING PAIRS */
 
