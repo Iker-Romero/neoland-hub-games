@@ -1,27 +1,6 @@
-export const insertPokemons = (pokemons) => {
-  const typesColors = {
-    bug: "#ABB842",
-    dark: "#6C594A",
-    dragon: "#6D48D2",
-    electric: "F2D153",
-    fairy: "#ECA4DD",
-    fight: "#85372D",
-    fire: "#DE5C3D",
-    flying: "#A491EA",
-    ghost: "#6C5994",
-    grass: "#8BC660",
-    ground: "#DBC174",
-    ice: "#A6D6D7",
-    normal: "#A8A87D",
-    poison: "#97489C",
-    psychic: "#E66388",
-    rock: "#B4A14A",
-    shadow: "#3E3345",
-    steel: "#B8B8CE",
-    uknown: "#B8B8CE",
-    water: "#708FE9",
-  };
+import { typesColors } from "../../utilities/pokemon-types-colors";
 
+export const insertPokemons = (pokemons) => {
   const pokemonsContainer = document.createElement("div");
   pokemonsContainer.classList.add("pokemons-container");
   // const template = `<div class="pokemons-container"></div>`;

@@ -1,3 +1,5 @@
+import { typesColors } from "../../utilities/pokemon-types-colors";
+
 export const filterByType = () => {
   const typesFilter = document.querySelector(".types-filter");
 
