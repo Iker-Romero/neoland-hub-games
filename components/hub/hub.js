@@ -1,6 +1,7 @@
 import { matchingPairs } from "../matching-pairs/matching-pairs";
 import { pokeAPI } from "../poke-api/poke-api";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
+import { transformPokemons } from "../transform-pokemons/transform-pokemons";
 
 export const hub = () => {
   const template = `
@@ -24,7 +25,7 @@ export const hub = () => {
   target.insertAdjacentHTML("afterend", template);
 
   // Array of functions for the scalability of games
-  const gamesComponents = [ticTacToe, pokeAPI];
+  const gamesComponents = [ticTacToe, transformPokemons];
   // matchingPairs
 
   const games = document.querySelectorAll(".game");
