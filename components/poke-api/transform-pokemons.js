@@ -1,5 +1,5 @@
 import { getData } from "../../services/sevices";
-import { insertPokemons } from "../insert-pokemons/insert-pokemons";
+import { insertPokemons } from "./insert-pokemons";
 
 export const transformPokemons = async () => {
   try {

@@ -1,20 +1,4 @@
 export const insertPokemons = (pokemons) => {
-  const template = `
-      <main>
-        <h1>POKE API</h1>
-        <fieldset class="types-filter">
-          <legend>Filter by main type: </legend>
-        
-        </fieldset>
-        <div class="pokemons-container">
-        
-        </div>
-      </main>
-      `;
-
-  const target = document.querySelector("header");
-  target.insertAdjacentHTML("afterend", template);
-
   const typesColors = {
     bug: "#ABB842",
     dark: "#6C594A",
@@ -38,36 +22,15 @@ export const insertPokemons = (pokemons) => {
     water: "#708FE9",
   };
 
-  const pokemonsContainer = document.querySelector(".pokemons-container");
+  const pokemonsContainer = document.createElement("div");
+  pokemonsContainer.classList.add("pokemons-container");
+  // const template = `<div class="pokemons-container"></div>`;
+  const main = document.querySelector("main");
+  main.appendChild(pokemonsContainer)
+  // const pokemonsContainer = document.querySelector(".pokemons-container");
+  console.log(pokemons)
 
-  // FILTER
-  const typesFilter = document.querySelector(".types-filter");
-
-  for (const type in typesColors) {
-    const template = `
-      <label for="${type}">
-        <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" />
-        ${type.toUpperCase()}
-      </label>
-    `;
-    
-    typesFilter.insertAdjacentHTML("beforeend", template);
-
-    console.log(typesFilter.lastElementChild)
-
-    typesFilter.lastElementChild.addEventListener("click", (event) => {
-
-      console.log("HOLA")
-
-      const pokemonsByType = pokemons.filter((pokemon) => {
-        return pokemon.types[0] === event.target.value;
-      });
-      pokemonsContainer.remove();
-      insertPokemons(pokemonsByType);
-    });
-  }
-
-  pokemons.forEach(async (pokemon, i) => {
+  pokemons.forEach((pokemon, i) => {
     const figure = `
           <figure style="background-color:${typesColors[pokemon.types[0]]};">
             <figcaption>${pokemon.name.toUpperCase()}</figcaption>
@@ -82,7 +45,9 @@ export const insertPokemons = (pokemons) => {
           </figure>
           `;
 
-    pokemonsContainer.insertAdjacentHTML("beforeend", figure);
+    // pokemonsContainer.insertAdjacentHTML("beforeend", figure);
+
+    pokemonsContainer.insertAdjacentHTML("beforeend", figure)
 
     if (pokemon.shinyImg) {
       const defaultContainer = document.querySelectorAll(".image-container")[i];
