@@ -2,7 +2,7 @@ export const typesColors = {
   bug: "#ABB842",
   dark: "#6C594A",
   dragon: "#6D48D2",
-  electric: "F2D153",
+  electric: "#F2D153",
   fairy: "#ECA4DD",
   fight: "#85372D",
   fire: "#DE5C3D",
