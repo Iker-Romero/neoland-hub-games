@@ -1,9 +1,9 @@
-export const insertPokemons = (array) => {
+export const insertPokemons = (pokemons) => {
   const template = `
       <main>
         <h1>POKE API</h1>
         <fieldset class="types-filter">
-          <legend>Select the pokemons main type:</legend>
+          <legend>Filter by main type: </legend>
         
         </fieldset>
         <div class="pokemons-container">
@@ -45,13 +45,29 @@ export const insertPokemons = (array) => {
 
   for (const type in typesColors) {
     const template = `
-      <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" />
-      <label for="${type}">${type.toUpperCase()}</label>
+      <label for="${type}">
+        <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" />
+        ${type.toUpperCase()}
+      </label>
     `;
+    
     typesFilter.insertAdjacentHTML("beforeend", template);
+
+    console.log(typesFilter.lastElementChild)
+
+    typesFilter.lastElementChild.addEventListener("click", (event) => {
+
+      console.log("HOLA")
+
+      const pokemonsByType = pokemons.filter((pokemon) => {
+        return pokemon.types[0] === event.target.value;
+      });
+      pokemonsContainer.remove();
+      insertPokemons(pokemonsByType);
+    });
   }
 
-  array.forEach(async (pokemon, i) => {
+  pokemons.forEach(async (pokemon, i) => {
     const figure = `
           <figure style="background-color:${typesColors[pokemon.types[0]]};">
             <figcaption>${pokemon.name.toUpperCase()}</figcaption>
