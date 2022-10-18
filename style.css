@@ -374,6 +374,10 @@ footer img {
   margin: 0.5rem;
 }
 
+.hidde-shiny {
+  display: none;
+}
+
 .types {
   display: flex;
   text-align: center;

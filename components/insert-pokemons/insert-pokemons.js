@@ -58,10 +58,21 @@ export const insertPokemons = (array) => {
       defaultContainer.insertAdjacentHTML(
         "beforeend",
         `
-        <img src="${pokemon.shinyImg}" alt="Shiny pokemon image" class="shiny-image">
+        <img src="${pokemon.shinyImg}" alt="Shiny pokemon image" class="shiny-image hidde-shiny">
         `
       );
     }
+
+    // SHOW/HIDDE SHINY
+    const shinyIcons = document.querySelectorAll(".shiny-icon");
+    const shinyImages = document.querySelectorAll(".shiny-image");
+    const defaultImages = document.querySelectorAll(".default-image");
+    shinyIcons.forEach((icon, i) => {
+      icon.addEventListener("click", () => {
+        defaultImages[i].classList.toggle("hidde-shiny");
+        shinyImages[i].classList.toggle("hidde-shiny");
+      })
+    })
 
     const typesDiv = document.querySelectorAll(".types")[i];
 
