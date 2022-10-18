@@ -1,4 +1,4 @@
-export const pokeAPI = (array) => {
+export const insertPokemons = (array) => {
   const template = `
       <main>
         <h1>POKE API</h1>
@@ -19,7 +19,7 @@ export const pokeAPI = (array) => {
     fairy: "#ECA4DD",
     fight: "#85372D",
     fire: "#DE5C3D",
-    flying: "##A491EA",
+    flying: "#A491EA",
     ghost: "#6C5994",
     grass: "#8BC660",
     ground: "#DBC174",
@@ -31,7 +31,7 @@ export const pokeAPI = (array) => {
     shadow: "#3E3345",
     steel: "#B8B8CE",
     uknown: "#B8B8CE",
-    water: "#B8B8CE",
+    water: "#708FE9",
   };
 
   array.forEach(async (pokemon, i) => {
@@ -65,7 +65,6 @@ export const pokeAPI = (array) => {
     const typesDiv = document.querySelectorAll(".types")[i];
 
     pokemon.types.forEach((type) => {
-
       const template = `
           <p style="background-color:${
             typesColors[type]

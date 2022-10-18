@@ -1,5 +1,5 @@
 import { getData } from "../../services/sevices";
-import { pokeAPI } from "../poke-api/poke-api";
+import { insertPokemons } from "../insert-pokemons/insert-pokemons";
 
 export const transformPokemons = async () => {
   try {
@@ -24,7 +24,7 @@ export const transformPokemons = async () => {
 
     console.log(pokemons);
 
-    pokeAPI(pokemons);
+    insertPokemons(pokemons);
   } catch (error) {
     console.log(error);
   }

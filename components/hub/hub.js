@@ -1,5 +1,4 @@
 import { matchingPairs } from "../matching-pairs/matching-pairs";
-import { pokeAPI } from "../poke-api/poke-api";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 import { transformPokemons } from "../transform-pokemons/transform-pokemons";
 
