@@ -23,8 +23,6 @@ export const insertPokemons = (pokemons) => {
           </figure>
           `;
 
-    // pokemonsContainer.insertAdjacentHTML("beforeend", figure);
-
     pokemonsContainer.insertAdjacentHTML("beforeend", figure)
 
     if (pokemon.shinyImg) {

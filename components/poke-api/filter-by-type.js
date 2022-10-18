@@ -15,17 +15,19 @@ export const filterByType = () => {
 
     typesFilter.insertAdjacentHTML("beforeend", template);
 
-    console.log(typesFilter.lastElementChild);
-
     typesFilter.lastElementChild.addEventListener("click", (event) => {
-      console.log("HOLA");
-
-      const pokemonsByType = pokemons.filter((pokemon) => {
-        return pokemon.types[0] === event.target.value;
-      });
       const pokemonsContainer = document.querySelector(".pokemons-container");
       pokemonsContainer.remove();
-      insertPokemons(pokemonsByType);
+
+      if (event.target.checked === true) {
+        const pokemonsByType = pokemons.filter((pokemon) => {
+          return pokemon.types[0] === event.target.value;
+        });
+
+        insertPokemons(pokemonsByType);
+      } else {
+        insertPokemons(pokemons);
+      }
     });
   }
 };
