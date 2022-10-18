@@ -7,8 +7,8 @@ import { transformPokemons } from "./components/transform-pokemons/transform-pok
 import "./style.css";
 
 const init = () => {
-  randomColor();
   nav()
+  randomColor();
   changeTheme();
   login();
   footer();

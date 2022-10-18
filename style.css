@@ -180,6 +180,7 @@ button {
 
 header {
   margin-bottom: 4rem;
+  z-index: 2;
 }
 
 /* NAV */
