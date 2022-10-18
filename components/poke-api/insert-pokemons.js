@@ -7,7 +7,6 @@ export const insertPokemons = (pokemons) => {
   const main = document.querySelector("main");
   main.appendChild(pokemonsContainer)
   // const pokemonsContainer = document.querySelector(".pokemons-container");
-  console.log(pokemons)
 
   pokemons.forEach((pokemon, i) => {
     const figure = `

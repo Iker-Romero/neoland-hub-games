@@ -1,10 +1,10 @@
 import { getData } from "../../services/sevices";
 import { insertPokemons } from "./insert-pokemons";
 
+export const pokemons = [];
+
 export const transformPokemons = async () => {
   try {
-    const pokemons = [];
-
     for (let i = 1; i <= 151; i++) {
       const pokemon = await getData(`https://pokeapi.co/api/v2/pokemon/${i}/`);
 
@@ -21,9 +21,7 @@ export const transformPokemons = async () => {
 
       pokemons.push(obj);
     }
-
-    console.log(pokemons);
-
+    
     insertPokemons(pokemons);
   } catch (error) {
     console.log(error);
