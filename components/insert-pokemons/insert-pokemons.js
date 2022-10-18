@@ -39,6 +39,7 @@ export const insertPokemons = (array) => {
           <figure style="background-color:${typesColors[pokemon.types[0]]};">
             <figcaption>${pokemon.name.toUpperCase()}</figcaption>
             <div class="image-container">
+              <img src="https://res.cloudinary.com/dvwva99mi/image/upload/v1666083956/neoland-hub-games/POKE%20API/shiny_s9opj1.png" alt="Shiny icon" class="shiny-icon">
               <img src="${pokemon.defaultImg}" alt="Default pokemon image" class="default-image">
             </div>
             <div class="types">

@@ -153,6 +153,11 @@ h1 {
   text-align: center;
 }
 
+img {
+  /* Deletes the default pixels of padding-bottom */
+  display: block;
+}
+
 input,
 select,
 option,
@@ -352,10 +357,21 @@ footer img {
   display: flex;
   flex-direction: column;
   gap: 0;
+  position: relative;
 }
-.image-container img {
-  width: 100%;
+
+.image-container > img {
   background-color: rgba(0, 0, 0, 0.33);
+}
+
+.shiny-icon {
+  width: 20%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: unset !important;
+  margin: 0.5rem;
 }
 
 .types {
