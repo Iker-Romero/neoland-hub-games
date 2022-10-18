@@ -2,6 +2,10 @@ export const insertPokemons = (array) => {
   const template = `
       <main>
         <h1>POKE API</h1>
+        <fieldset class="types-filter">
+          <legend>Select the pokemons main type:</legend>
+        
+        </fieldset>
         <div class="pokemons-container">
         
         </div>
@@ -34,6 +38,19 @@ export const insertPokemons = (array) => {
     water: "#708FE9",
   };
 
+  const pokemonsContainer = document.querySelector(".pokemons-container");
+
+  // FILTER
+  const typesFilter = document.querySelector(".types-filter");
+
+  for (const type in typesColors) {
+    const template = `
+      <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" />
+      <label for="${type}">${type.toUpperCase()}</label>
+    `;
+    typesFilter.insertAdjacentHTML("beforeend", template);
+  }
+
   array.forEach(async (pokemon, i) => {
     const figure = `
           <figure style="background-color:${typesColors[pokemon.types[0]]};">
@@ -49,7 +66,6 @@ export const insertPokemons = (array) => {
           </figure>
           `;
 
-    const pokemonsContainer = document.querySelector(".pokemons-container");
     pokemonsContainer.insertAdjacentHTML("beforeend", figure);
 
     if (pokemon.shinyImg) {
