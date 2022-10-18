@@ -7,6 +7,8 @@ export const filterByType = () => {
 
   const selectedTypes = [];
 
+  const pokemonsByType = [];
+
   for (const type in typesColors) {
     const template = `
       <label for="${type}">
@@ -21,33 +23,45 @@ export const filterByType = () => {
       const pokemonsContainer = document.querySelector(".pokemons-container");
 
       if (event.target.checked === true) {
-
         selectedTypes.push(event.target.value);
 
-        // const pokemonsByType = pokemons.filter((pokemon) => {
-        //   return pokemon.types[0] === event.target.value;
-        // });
-        const pokemonsByType = [];
+        console.log(selectedTypes)
+
 
         selectedTypes.forEach((selectedType) => {
           const add = pokemons.filter((pokemon) => {
             return pokemon.types[0] === selectedType;
           });
-          pokemonsByType.push(...add)
-        })
 
+          pokemonsByType.push(...add);
+        });
 
+        console.log(pokemonsByType)
 
         pokemonsContainer.remove();
-        // console.log(selectedTypes)
+
         insertPokemons(pokemonsByType);
       } else {
-        console.log(selectedTypes)
-        selectedTypes.slice(selectedTypes.indexOf(event.target.value), 1);
-        console.log(selectedTypes)
-        insertPokemons(pokemons);
+        const pokemonsByType = [];
+        
+        selectedTypes.splice(selectedTypes.indexOf(event.target.value), 1);
+
+        console.log(selectedTypes);
+
+        selectedTypes.forEach((selectedType) => {
+          const add = pokemons.filter((pokemon) => {
+            return pokemon.types[0] === selectedType;
+          });
+
+          pokemonsByType.push(...add);
+        });
+
+        console.log(selectedTypes);
+
+        pokemonsContainer.remove();
+
+        insertPokemons(pokemonsByType);
       }
-      console.log(selectedTypes)
     });
   }
 };
