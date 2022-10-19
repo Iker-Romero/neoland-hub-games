@@ -5,9 +5,9 @@ import { insertPokemons } from "./insert-pokemons";
 export const filterByType = () => {
   const typesFilter = document.querySelector(".types-filter");
 
-  const selectedTypes = [];
+  let selectedTypes = [];
 
-  const pokemonsByType = [];
+  let pokemonsByType = [];
 
   for (const type in typesColors) {
     const template = `
@@ -22,45 +22,48 @@ export const filterByType = () => {
     typesFilter.lastElementChild.addEventListener("click", (event) => {
       const pokemonsContainer = document.querySelector(".pokemons-container");
 
-      if (event.target.checked === true) {
+      if (event.target.checked) {
+        pokemonsByType = [];
+        
+        console.log(selectedTypes)
         selectedTypes.push(event.target.value);
-
         console.log(selectedTypes)
 
-
-        selectedTypes.forEach((selectedType) => {
+        selectedTypes.forEach((selectedType, i) => {
           const add = pokemons.filter((pokemon) => {
             return pokemon.types[0] === selectedType;
           });
 
           pokemonsByType.push(...add);
         });
-
-        console.log(pokemonsByType)
 
         pokemonsContainer.remove();
 
         insertPokemons(pokemonsByType);
       } else {
         const pokemonsByType = [];
-        
+
+        console.log(selectedTypes)
         selectedTypes.splice(selectedTypes.indexOf(event.target.value), 1);
+        console.log(selectedTypes)
 
-        console.log(selectedTypes);
+        if (selectedTypes.length === 0) {
+          pokemonsContainer.remove();
 
-        selectedTypes.forEach((selectedType) => {
-          const add = pokemons.filter((pokemon) => {
-            return pokemon.types[0] === selectedType;
+          insertPokemons(pokemons);
+        } else {
+          selectedTypes.forEach((selectedType) => {
+            const add = pokemons.filter((pokemon) => {
+              return pokemon.types[0] === selectedType;
+            });
+
+            pokemonsByType.push(...add);
           });
 
-          pokemonsByType.push(...add);
-        });
+          pokemonsContainer.remove();
 
-        console.log(selectedTypes);
-
-        pokemonsContainer.remove();
-
-        insertPokemons(pokemonsByType);
+          insertPokemons(pokemonsByType);
+        }
       }
     });
   }
