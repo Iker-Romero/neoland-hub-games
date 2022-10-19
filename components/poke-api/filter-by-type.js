@@ -1,4 +1,4 @@
-import { typesColors } from "../../utilities/pokemon-types-colors";
+import { pokemonTypes } from "../../utilities/pokemon-types-colors";
 import { pokemons } from "./transform-pokemons";
 import { insertPokemons } from "./insert-pokemons";
 
@@ -9,11 +9,11 @@ export const filterByType = () => {
 
   let pokemonsByType = [];
 
-  for (const type in typesColors) {
+  for (const type in pokemonTypes) {
     const template = `
-      <label for="${type}">
-        <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" />
-        ${type.toUpperCase()}
+      <label for="${type}" class="type-label">
+        <img src="${pokemonTypes[type].icon}" alt="${type} icon" />
+        <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" style="display:none;"/>
       </label>
     `;
 

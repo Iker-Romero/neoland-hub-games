@@ -382,7 +382,27 @@ footer img {
   }
 }
 
-/* Content */
+/* Type Filter */
+
+.types-filter {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.type-label {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+.type-label > img {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+/* Pokemons */
 
 .pokemons-container {
   display: grid;

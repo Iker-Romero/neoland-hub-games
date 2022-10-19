@@ -1,4 +1,4 @@
-import { typesColors } from "../../utilities/pokemon-types-colors";
+import { pokemonTypes } from "../../utilities/pokemon-types-colors";
 
 export const insertPokemons = (pokemons) => {
   const pokemonsContainer = document.createElement("div");
@@ -8,7 +8,7 @@ export const insertPokemons = (pokemons) => {
 
   pokemons.forEach((pokemon, i) => {
     const figure = `
-          <figure style="background-color:${typesColors[pokemon.types[0]]};">
+          <figure style="background-color:${pokemonTypes[pokemon.types[0]].color};">
             <figcaption>${pokemon.name.toUpperCase()}</figcaption>
             <div class="image-container">
               <img src="${
@@ -49,7 +49,7 @@ export const insertPokemons = (pokemons) => {
     pokemon.types.forEach((type) => {
       const template = `
           <p style="background-color:${
-            typesColors[type]
+            pokemonTypes[type]
           };">${type.toUpperCase()}</p>
           `;
 
