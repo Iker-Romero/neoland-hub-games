@@ -49,7 +49,7 @@ export const insertPokemons = (pokemons) => {
     pokemon.types.forEach((type) => {
       const template = `
           <p style="background-color:${
-            pokemonTypes[type]
+            pokemonTypes[type].color
           };">${type.toUpperCase()}</p>
           `;
 
