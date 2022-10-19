@@ -25,11 +25,9 @@ export const filterByType = () => {
       if (event.target.checked) {
         pokemonsByType = [];
         
-        console.log(selectedTypes)
         selectedTypes.push(event.target.value);
-        console.log(selectedTypes)
 
-        selectedTypes.forEach((selectedType, i) => {
+        selectedTypes.forEach((selectedType) => {
           const add = pokemons.filter((pokemon) => {
             return pokemon.types[0] === selectedType;
           });
@@ -43,9 +41,7 @@ export const filterByType = () => {
       } else {
         const pokemonsByType = [];
 
-        console.log(selectedTypes)
         selectedTypes.splice(selectedTypes.indexOf(event.target.value), 1);
-        console.log(selectedTypes)
 
         if (selectedTypes.length === 0) {
           pokemonsContainer.remove();

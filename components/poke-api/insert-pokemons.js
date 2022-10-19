@@ -3,10 +3,9 @@ import { typesColors } from "../../utilities/pokemon-types-colors";
 export const insertPokemons = (pokemons) => {
   const pokemonsContainer = document.createElement("div");
   pokemonsContainer.classList.add("pokemons-container");
-  // const template = `<div class="pokemons-container"></div>`;
+
   const main = document.querySelector("main");
   main.appendChild(pokemonsContainer)
-  // const pokemonsContainer = document.querySelector(".pokemons-container");
 
   pokemons.forEach((pokemon, i) => {
     const figure = `

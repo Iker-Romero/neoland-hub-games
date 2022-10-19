@@ -20,7 +20,7 @@ export const login = () => {
     const button = document.querySelector("#submitName");
 
     button.addEventListener("click", () => {
-      if ((button.value !== "") === false && typeof input.value == "string") {
+      if (input.value.match(/^[A-Za-z]+$/)) {
         localStorage.setItem("name", input.value.trim());
         document.querySelector(".login").remove();
         hub();
