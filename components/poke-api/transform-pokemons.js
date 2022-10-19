@@ -22,6 +22,8 @@ export const transformPokemons = async () => {
       pokemons.push(obj);
     }
     
+    document.querySelector(".pokemon-loading").remove();
+
     insertPokemons(pokemons);
   } catch (error) {
     console.log(error);

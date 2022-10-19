@@ -3,9 +3,8 @@ import { typesColors } from "../../utilities/pokemon-types-colors";
 export const insertPokemons = (pokemons) => {
   const pokemonsContainer = document.createElement("div");
   pokemonsContainer.classList.add("pokemons-container");
-
   const main = document.querySelector("main");
-  main.appendChild(pokemonsContainer)
+  main.appendChild(pokemonsContainer);
 
   pokemons.forEach((pokemon, i) => {
     const figure = `
@@ -22,7 +21,7 @@ export const insertPokemons = (pokemons) => {
           </figure>
           `;
 
-    pokemonsContainer.insertAdjacentHTML("beforeend", figure)
+    pokemonsContainer.insertAdjacentHTML("beforeend", figure);
 
     if (pokemon.shinyImg) {
       const defaultContainer = document.querySelectorAll(".image-container")[i];
