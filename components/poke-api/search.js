@@ -12,7 +12,7 @@ export const search = () => {
 
   selectInput.addEventListener("input", () => {
     const match = pokemons.filter((pokemon) => {
-      return pokemon.name.toLowerCase().includes(input.value);
+      return pokemon.name.toLowerCase().includes(input.value.toLowerCase());
     });
 
     const pokemonsContainer = document.querySelector(".pokemons-container");
