@@ -293,6 +293,7 @@ footer img {
   display: grid;
   align-items: center;
   justify-content: center;
+  border-radius: 1rem;
 }
 
 /* TIC-TAC-TOE */
