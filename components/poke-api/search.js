@@ -4,9 +4,10 @@ import { pokemons } from "./transform-pokemons";
 export const search = () => {
   const input = document.createElement("input");
   input.classList.add("search-input");
+  input.id = "search-input";
 
-  const filter = document.querySelector(".types-filter");
-  filter.appendChild(input);
+  const searchContainer = document.querySelector(".search-container");
+  searchContainer.appendChild(input);
 
   const selectInput = document.querySelector(".search-input");
 

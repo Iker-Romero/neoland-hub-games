@@ -3,7 +3,7 @@ import { pokemons } from "./transform-pokemons";
 import { insertPokemons } from "./insert-pokemons";
 
 export const filterByType = () => {
-  const typesFilter = document.querySelector(".types-filter");
+  const typesContainer = document.querySelector(".types-container");
 
   let selectedTypes = [];
 
@@ -11,21 +11,31 @@ export const filterByType = () => {
 
   for (const type in pokemonTypes) {
     const template = `
-      <label for="${type}" class="type-label">
+      <div class="type-div checkbox-unselected" style="background-color: ${pokemonTypes[type].color};">
         <img src="${pokemonTypes[type].icon}" alt="${type} icon" />
-        <input type="checkbox" value="${type}" id="${type}" class="type-checkbox" style="display:none;"/>
-      </label>
+        <input type="checkbox" value="${type}" id="${type}" class="type-checkbox "/>
+      </div>
     `;
+    console.log(pokemonTypes[type].color);
 
-    typesFilter.insertAdjacentHTML("beforeend", template);
+    typesContainer.insertAdjacentHTML("beforeend", template);
+  }
 
-    typesFilter.lastElementChild.addEventListener("click", (event) => {
+  const checkboxes = document.querySelectorAll(".type-checkbox");
+  console.log(checkboxes);
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("click", (event) => {
       const pokemonsContainer = document.querySelector(".pokemons-container");
 
-      if (event.target.checked) {
+      checkbox.parentElement.classList.toggle("checkbox-unselected");
+
+      if (checkbox.checked) {
         pokemonsByType = [];
-        
+
         selectedTypes.push(event.target.value);
+
+        console.log(selectedTypes)
 
         selectedTypes.forEach((selectedType) => {
           const add = pokemons.filter((pokemon) => {
@@ -62,5 +72,5 @@ export const filterByType = () => {
         }
       }
     });
-  }
+  });
 };

@@ -8,9 +8,14 @@ export const pokemonLayout = () => {
   const template = `
       <main>
         <h1>POKE API</h1>
+        <div class="search-container">
+          <label for="search-input">Search by name: </label>
+        </div>
         <fieldset class="types-filter">
           <legend>Filter by main type: </legend>
-        
+          <div class="types-container">
+          
+          </div>
         </fieldset>
       </main>
       `;
