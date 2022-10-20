@@ -24,6 +24,8 @@ export const quizRide = async (url) => {
       }
     };
 
+    disorderTest();
+
     const printQuestion = (i) => {
       const question = disorderedTest[i].question;
 
@@ -42,9 +44,17 @@ export const quizRide = async (url) => {
       const main = document.querySelector("main");
       main.insertAdjacentHTML("beforeend", template);
 
-      // const exerciseSection = document.querySelector(".exercise-section");
-
       const ol = document.querySelector("ol");
+
+      const disorderAnswers = () => {
+        const disorderedAnswers = [];
+
+        while (disorderedAnswers.length <= test.answers.length) {
+          const random = Math.floor(Math.random() * test.answers.length);
+          disorderedAnswers.push(test.answers[random]);
+          test.answers.splice(random, 1);
+        }
+      };
 
       disorderedTest[i].answers.forEach((answer) => {
         const option = `
@@ -54,7 +64,28 @@ export const quizRide = async (url) => {
         ol.insertAdjacentHTML("beforeend", option);
       });
 
-      const option = document.querySelector
+      const saveAnswer = () => {
+        const options = document.querySelectorAll("li");
+
+        const userAnswers = [];
+
+        options.forEach((option) => {
+          option.addEventListener("click", () => {
+            // The first answer of the API is the correct.
+            if (option.innerHTML === test[i].answers[0]) {
+              userAnswers.push("correct");
+            } else {
+              userAnswers.push("incorrect");
+            }
+            
+            if (i < test.length - 1) {
+              printQuestion(i + 1);
+            } else {
+              // SHOW RESULTS AND ALLOW TO REPEAT
+            }
+          });
+        });
+      };
     };
   } catch (error) {
     console.log(error);
