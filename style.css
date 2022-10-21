@@ -557,6 +557,45 @@ footer img {
   gap: 1rem;
 }
 
+/* QUIZ RIDE */
+
+/* main {
+  width: auto;
+} */
+
+.exercise-section, .result-section {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 1rem;
+}
+
+.exercise-section > h2, .result-section > h2 {
+  font-weight: bold;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.answers-container ol{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.answers-container, .quiz-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.answers-container li {
+  text-indent: 2rem;
+}
+
 /* MEMORY: MATCHING PAIRS */
 
 .memory {

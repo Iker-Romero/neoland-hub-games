@@ -19,8 +19,10 @@ export const showResult = (test, disorderedTest) => {
   const template = `
   <section class="result-section">
     <h2>Resultado</h2>
-    <p>Fallos: ${incorrects}</p>
-    <p>Aciertos: ${corrects}</p>
+    <div class="quiz-stats">
+      <p>Fallos: ${incorrects}</p>
+      <p>Aciertos: ${corrects}</p>
+    </div>
     <button class="quiz-reset">Reiniciar</button>
   </section>
   `;
