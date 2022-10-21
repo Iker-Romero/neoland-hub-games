@@ -1,8 +1,8 @@
-import { matchingPairs } from "../../components/matching-pairs/matching-pairs";
-import { pokeApiInit } from "../../components/poke-api/poke-api-init";
-import { ticTacToe } from "../../components/tic-tac-toe/tic-tac-toe";
-import { whakaTopo } from "../../components/whaka-topo/whaka-topo";
-import { quizRide } from "../../components/quiz-ride/quiz-neo";
+import { matchingPairs } from "../matching-pairs/matching-pairs";
+import { pokeApiInit } from "../poke-api/poke-api-init";
+import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
+import { whakaTopo } from "../whaka-topo/whaka-topo";
+import { quizRide } from "../quiz-ride/quiz-neo";
 
 export const hub = () => {
   const template = `

@@ -1,4 +1,4 @@
-import { hub } from "../hub/hub";
+import { hub } from "../../pages/hub/hub";
 
 export const nav = () => {
   const template = `
