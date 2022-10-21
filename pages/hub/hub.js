@@ -2,7 +2,7 @@ import { matchingPairs } from "../matching-pairs/matching-pairs";
 import { pokeApiInit } from "../poke-api/poke-api-init";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 import { whakaTopo } from "../whaka-topo/whaka-topo";
-import { quizRide } from "../quiz-ride/quiz-neo";
+import { quizRide } from "../quiz-ride/quiz-ride";
 
 export const hub = () => {
   const template = `

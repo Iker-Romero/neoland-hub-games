@@ -1,20 +1,18 @@
 import { printQuestion } from "./print-question";
-import { userAnswers } from "./quiz-neo";
+import { showResult } from "./result";
+
+export const userAnswers = [];
 
 export const saveAnswer = (test, disorderedTest, i) => {
-  // let questionIndex = start;
-
   const options = document.querySelectorAll("li");
-
-  // const userAnswers = [];
 
   const exerciseSection = document.querySelector(".exercise-section");
 
   options.forEach((option) => {
     option.addEventListener("click", () => {
-      console.log(test)
-      console.log(i)
       // The first answer of the API is the correct.
+      console.log(option.innerHTML)
+      console.log(test[i].answers[0])
       if (option.innerHTML === test[i].answers[0]) {
         userAnswers.push("correct");
       } else {
@@ -28,7 +26,7 @@ export const saveAnswer = (test, disorderedTest, i) => {
       } else {
         exerciseSection.remove();
 
-        // return userAnswers;
+        showResult(test, disorderedTest);
       }
     });
   });

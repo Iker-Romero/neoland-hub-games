@@ -6,7 +6,7 @@ export const printQuestion = (test, disorderedTest, i) => {
 
   const template = `
       <section class="exercise-section">
-        <h2 class="question">${question}</h2>
+        <h2 class="question">${i + 1}.- ${question}</h2>
         <div class="answers-container">
           <ol>
           
@@ -25,7 +25,7 @@ export const printQuestion = (test, disorderedTest, i) => {
 
   disorderedAnswers.forEach((answer) => {
     const option = `
-        <li>- ${answer}</li>
+        <li>${answer}</li>
       `;
 
     ol.insertAdjacentHTML("beforeend", option);

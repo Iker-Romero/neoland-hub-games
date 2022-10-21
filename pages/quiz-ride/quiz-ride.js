@@ -3,8 +3,6 @@ import { disorder } from "./disorder-test";
 import { printQuestion } from "./print-question";
 import { quizTemplate } from "./template";
 
-export const userAnswers = [];
-
 export const quizRide = () => {
   quizTemplate();
 
@@ -13,8 +11,4 @@ export const quizRide = () => {
   const disorderedTest = disorder(test);
 
   printQuestion(test, disorderedTest, 0);
-
-  
 };
-
-console.log(userAnswers);
