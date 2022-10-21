@@ -3,6 +3,7 @@ import { pokeApiInit } from "../poke-api/poke-api-init";
 import { ticTacToe } from "../tic-tac-toe/tic-tac-toe";
 import { whakaTopo } from "../whaka-topo/whaka-topo";
 import { quizRide } from "../quiz-ride/quiz-ride";
+import { hangMan } from "../hang-man/hang-man";
 
 export const hub = () => {
   const template = `
@@ -16,10 +17,13 @@ export const hub = () => {
         <p>POKE API</p>
       </div>
       <div class="game">
-        <p>🔨Whaka-topo🔨</p>
+        <p>🔨 Whaka-topo 🔨</p>
       </div>
       <div class="game">
         <p>🚗 Quiz Ride 🐎</p>
+      </div>
+      <div class="game">
+        <p>🪢 Hang Man 🪢</p>
       </div>
     </div>
   </main>
@@ -31,15 +35,14 @@ export const hub = () => {
   const target = document.querySelector("header");
   target.insertAdjacentHTML("afterend", template);
 
-  // Array of functions for the scalability of games
-  const gamesComponents = [ticTacToe, pokeApiInit, whakaTopo, quizRide];
+  const gamesPages = [ticTacToe, pokeApiInit, whakaTopo, quizRide, hangMan];
   // matchingPairs
 
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {
     game.addEventListener("click", () => {
       document.querySelector("main").remove();
-      gamesComponents[i]();
+      gamesPages[i]();
     });
   });
 };
