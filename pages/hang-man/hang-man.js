@@ -8,7 +8,7 @@ export const hangMan = () => {
     <main class="hang-man">
       <h1>🪢 Hang Man 🪢</h1>
       <section class="choose-word">
-        ${label("wordInput", "Introduce la palabra secreta: ")}
+        ${label("wordInput", "Decide the secret word: ")}
         ${wordInput("wordInput")}
         ${submitButton("submitWord")}
       </section>

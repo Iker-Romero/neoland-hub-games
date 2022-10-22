@@ -17,7 +17,7 @@ export const gameTemplate = (wordLetters, attempts) => {
       </section>
       <section class="guess-section">
         ${lettersDisplay(wordLetters)}
-        ${label("letterInput", "Escoge una letra: ")}
+        ${label("letterInput", "Enter a leter: ")}
         <div>
           ${letterInput("letterInput")}
           ${submitButton("submitLetter")}
