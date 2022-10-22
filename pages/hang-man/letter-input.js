@@ -1,6 +1,8 @@
-export const letterInput = () => {
-  const template = `
-    <label for="letter-input">Adivina una letra: </label>
-    <input type="text" id="letter-input" class="letter-input" />
-  `;
-}
+export const letterInput = (id) => `<input 
+    type="text" 
+    pattern="/^[A-Za-z]+$/" 
+    maxlenght="1" 
+    autocomplete="off" 
+    id="${id}" 
+    class="letterInput" />
+`;

@@ -1,27 +1,12 @@
-import { submitButton } from "./submit-button";
-import { wordInput } from "./word-input";
+import { checkLetters } from "./check-letters";
+import { gameTemplate } from "./game-template";
 
 export const startGame = () => {
   const input = document.querySelector("#wordInput");
   const secretWord = input.value;
+  const wordLetters = [...secretWord];
 
-  const chooseWord = document.querySelector(".choose-word");
-  chooseWord.remove();
-  
-  const template = `
-    <div class="game-container">
-      <section class="info-side">
+  gameTemplate(wordLetters);
 
-      </sectin>
-      <section class="interactive-side">
-        ${wordInput("letterInput")}
-        ${submitButton("submitLetter")}
-      </sectin>
-    </div>
-  `;
-  const main = document.querySelector("main");
-  main.insertAdjacentHTML("beforeend", template);
-
-
-
-}
+  checkLetters(wordLetters);
+};

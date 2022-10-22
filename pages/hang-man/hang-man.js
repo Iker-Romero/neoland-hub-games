@@ -10,7 +10,7 @@ export const hangMan = () => {
       <section class="choose-word">
         ${label("wordInput", "Introduce la palabra secreta: ")}
         ${wordInput("wordInput")}
-        ${submitButton("submitInput")}
+        ${submitButton("submitWord")}
       </section>
     </main>
   `;
@@ -18,6 +18,6 @@ export const hangMan = () => {
   const header = document.querySelector("header");
   header.insertAdjacentHTML("afterend", template);
 
-  const button = document.querySelector("#submitInput");
+  const button = document.querySelector("#submitWord");
   button.addEventListener("click", startGame);
 };
