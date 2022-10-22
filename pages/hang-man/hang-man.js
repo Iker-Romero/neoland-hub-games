@@ -1,5 +1,23 @@
-import { template } from "./template";
+import { label } from "./label";
+import { startGame } from "./start-game";
+import { submitButton } from "./submit-button";
+import { wordInput } from "./word-input";
 
 export const hangMan = () => {
-  template();
+  const template = `
+    <main>
+      <h1>🪢 Hang Man 🪢</h1>
+      <section class="choose-word">
+        ${label("wordInput", "Introduce la palabra secreta: ")}
+        ${wordInput("wordInput")}
+        ${submitButton("submitInput")}
+      </section>
+    </main>
+  `;
+
+  const header = document.querySelector("header");
+  header.insertAdjacentHTML("afterend", template);
+
+  const button = document.querySelector("#submitInput");
+  button.addEventListener("click", startGame);
 };

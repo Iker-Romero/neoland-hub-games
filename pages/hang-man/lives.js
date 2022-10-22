@@ -4,5 +4,5 @@ export const attempts = () => {
   const span = document.createElement("span");
   span.className = "remaining";
 
-  p.innerHTML = `Atempts remaining ${span}`;
+  p.innerHTML = `Attempts remaining ${span}`;
 } 
