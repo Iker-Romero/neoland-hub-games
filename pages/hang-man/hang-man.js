@@ -5,7 +5,7 @@ import { wordInput } from "./word-input";
 
 export const hangMan = () => {
   const template = `
-    <main>
+    <main class="hang-man">
       <h1>🪢 Hang Man 🪢</h1>
       <section class="choose-word">
         ${label("wordInput", "Introduce la palabra secreta: ")}

@@ -4,5 +4,5 @@ export const letterInput = (id) => `<input
     maxlenght="1" 
     autocomplete="off" 
     id="${id}" 
-    class="letterInput" />
+    class="letter-input" />
 `;

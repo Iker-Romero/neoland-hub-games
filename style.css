@@ -165,7 +165,8 @@ textarea {
   height: 2rem;
   border-radius: 1rem;
   padding: 0 1rem;
-  width: 20rem;
+  min-width: 10rem;
+  max-width: 20rem;
 }
 
 button {
@@ -563,27 +564,30 @@ footer img {
   width: auto;
 } */
 
-.exercise-section, .result-section {
+.exercise-section,
+.result-section {
   display: flex;
   flex-direction: column;
   align-self: center;
   gap: 1rem;
 }
 
-.exercise-section > h2, .result-section > h2 {
+.exercise-section > h2,
+.result-section > h2 {
   font-weight: bold;
   padding: 1rem;
   background-color: white;
   border-radius: 1rem;
 }
 
-.answers-container ol{
+.answers-container ol {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.answers-container, .quiz-stats {
+.answers-container,
+.quiz-stats {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -594,6 +598,71 @@ footer img {
 
 .answers-container li {
   text-indent: 2rem;
+}
+
+/* HANG MAN */
+
+.hang-man {
+  width: 100%;
+}
+
+.choose-word {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.game-container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+.attempts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hang-man-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 10rem;
+  max-width: 20rem;
+  aspect-ratio: 0.9;
+  object-fit: contain;
+}
+
+.hang-man-container > img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.guess-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hang-man .letter-input {
+  width: 5rem;
+}
+
+.submit-button {
+  width: fit-content;
 }
 
 /* MEMORY: MATCHING PAIRS */

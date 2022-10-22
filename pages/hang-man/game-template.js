@@ -9,18 +9,20 @@ export const gameTemplate = (wordLetters, attempts) => {
   
   const template = `
     <div class="game-container">
-      <section class="tries-section">
+      <section class="attempts-section">
         <div class="hang-man-container">
           <img src="" alt="Hang Man Draw" class="hang-man-image" />
         </div>
         <p>Attempts remaining: <span class="remaining">${attempts}</span></p>
-      </sectin>
+      </section>
       <section class="guess-section">
         ${lettersDisplay(wordLetters)}
         ${label("letterInput", "Escoge una letra: ")}
-        ${letterInput("letterInput")}
-        ${submitButton("submitLetter")}
-      </sectin>
+        <div>
+          ${letterInput("letterInput")}
+          ${submitButton("submitLetter")}
+        </div>
+      </section>
     </div>
   `;
 
