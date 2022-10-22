@@ -5,7 +5,7 @@ export const startGame = () => {
   const input = document.querySelector("#wordInput");
   const secretWord = input.value;
   const wordLetters = [...secretWord];
-  let attempts = 5;
+  let attempts = 3;
 
   gameTemplate(wordLetters, attempts);
 

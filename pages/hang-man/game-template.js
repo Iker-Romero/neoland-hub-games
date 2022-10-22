@@ -10,6 +10,9 @@ export const gameTemplate = (wordLetters, attempts) => {
   const template = `
     <div class="game-container">
       <section class="tries-section">
+        <div class="hang-man-container">
+          <img src="" alt="Hang Man Draw" class="hang-man-image" />
+        </div>
         <p>Attempts remaining: <span class="remaining">${attempts}</span></p>
       </sectin>
       <section class="guess-section">
