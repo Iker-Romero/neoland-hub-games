@@ -3,14 +3,14 @@ import { letterInput } from "./letter-input";
 import { lettersDisplay } from "./letters-display";
 import { submitButton } from "./submit-button";
 
-export const gameTemplate = (wordLetters) => {
+export const gameTemplate = (wordLetters, attempts) => {
   const chooseWord = document.querySelector(".choose-word");
   chooseWord.remove();
   
   const template = `
     <div class="game-container">
       <section class="tries-section">
-
+        <p>Attempts remaining: <span class="remaining">${attempts}</span></p>
       </sectin>
       <section class="guess-section">
         ${lettersDisplay(wordLetters)}

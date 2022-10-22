@@ -5,8 +5,9 @@ export const startGame = () => {
   const input = document.querySelector("#wordInput");
   const secretWord = input.value;
   const wordLetters = [...secretWord];
+  let attempts = 5;
 
-  gameTemplate(wordLetters);
+  gameTemplate(wordLetters, attempts);
 
-  checkLetters(wordLetters);
+  checkLetters(wordLetters, attempts);
 };
