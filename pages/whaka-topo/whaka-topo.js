@@ -55,16 +55,12 @@ export const whakaTopo = () => {
 
       const holes = Array.from(document.querySelectorAll(".hole"));
 
-      // console.log(holes)
-
-      // Descarta última casilla elegida
+      // Discard last hole
       if (typeof i === "number") {
         holes.splice(i, 1);
       }
 
       const hole = holes[Math.floor(Math.random() * 12)];
-
-      // console.log(hole);
 
       hole.insertAdjacentHTML("beforeend", topo);
 
@@ -78,12 +74,7 @@ export const whakaTopo = () => {
         const toRemove = document.querySelector(".holes-grid");
         toRemove.remove();
 
-        // const h1 = document.querySelector("h1");
         h1.insertAdjacentHTML("afterend", holesGrid);
-
-        // setTimeout(() => {
-        //   randomHole(i);
-        // }, 1000);
       });
 
       count.innerHTML = score;

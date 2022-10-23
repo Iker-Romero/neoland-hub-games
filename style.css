@@ -521,6 +521,7 @@ footer img {
     background-color: black;
     border-radius: 50%;
     font-size: calc(80vh / 6);
+    user-select: none;
   }
 }
 
