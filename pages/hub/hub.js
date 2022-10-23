@@ -21,7 +21,7 @@ export const hub = () => {
           <p>POKE API</p>
         </div>
         <div class="game">
-          <p>🔨 Whaka-topo 🔨</p>
+          <p>🔨 Whaka-mole 🔨</p>
         </div>
         <div class="game">
           <p>🚗 Quiz Ride 🐎</p>

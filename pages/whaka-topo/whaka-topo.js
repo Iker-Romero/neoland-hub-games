@@ -18,7 +18,7 @@ export const whakaTopo = () => {
 
   const template = `
   <main class="whaka-topo">
-    <h1>🔨 Whaka-topo 🔨</h1>
+    <h1>🔨 Whaka-mole 🔨</h1>
     ${holesGrid}
     <div class="score-div">
       <p>Score: <span class="score-count">0</span></p>
