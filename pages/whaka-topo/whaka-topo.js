@@ -30,8 +30,6 @@ export const whakaTopo = () => {
   const header = document.querySelector("header");
   header.insertAdjacentHTML("afterend", template);
 
-  
-
   const topo = "🙉";
 
   let score = 0;
@@ -72,17 +70,17 @@ export const whakaTopo = () => {
 
       hole.addEventListener("click", () => {
         console.log("click");
-  
+
         score++;
-  
+
         count.innerHTML = score;
-  
+
         const toRemove = document.querySelector(".holes-grid");
         toRemove.remove();
-  
+
         const h1 = document.querySelector("h1");
         h1.insertAdjacentHTML("afterend", holesGrid);
-  
+
         // setTimeout(() => {
         //   randomHole(i);
         // }, 1000);
@@ -94,9 +92,13 @@ export const whakaTopo = () => {
       count.innerHTML = score;
       console.log(count);
 
-      setInterval(() => {
-        randomHole()
+      const moleInterval = setInterval(() => {
+        randomHole();
       }, 2000);
+      const hubButton = document.querySelector(".hub-button");
+      hubButton.addEventListener("click", () => {
+        clearInterval(moleInterval);
+      });
     }
   };
 
