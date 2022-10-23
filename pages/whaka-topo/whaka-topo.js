@@ -18,7 +18,7 @@ export const whakaTopo = () => {
 
   const template = `
   <main class="whaka-topo">
-    <h1>🔨Whaka-topo🔨</h1>
+    <h1>🔨 Whaka-topo 🔨</h1>
     ${holesGrid}
     <div class="score-div">
       <p>Score: <span class="score-count">0</span></p>
@@ -78,7 +78,7 @@ export const whakaTopo = () => {
         const toRemove = document.querySelector(".holes-grid");
         toRemove.remove();
 
-        const h1 = document.querySelector("h1");
+        // const h1 = document.querySelector("h1");
         h1.insertAdjacentHTML("afterend", holesGrid);
 
         // setTimeout(() => {
@@ -86,43 +86,18 @@ export const whakaTopo = () => {
         // }, 1000);
       });
 
-      // console.log(score);
-      // score--;
-
       count.innerHTML = score;
       console.log(count);
-
-      const moleInterval = setInterval(() => {
-        randomHole();
-      }, 2000);
-      const hubButton = document.querySelector(".hub-button");
-      hubButton.addEventListener("click", () => {
-        clearInterval(moleInterval);
-      });
     }
   };
 
-  randomHole();
+  const moleInterval = setInterval(() => {
+    randomHole();
+  }, 800);
 
-  // const holes = Array.from(document.querySelectorAll(".hole"));
-
-  // holes.forEach((hole, i) => {
-  //   hole.addEventListener("click", () => {
-  //     console.log("click");
-
-  //     score++;
-
-  //     count.innerHTML = score;
-
-  //     const toRemove = document.querySelector(".holes-grid");
-  //     toRemove.remove();
-
-  //     const h1 = document.querySelector("h1");
-  //     h1.insertAdjacentHTML("afterend", holesGrid);
-
-  //     setTimeout(() => {
-  //       randomHole(i);
-  //     }, 1000);
-  //   });
-  // });
+  // Stop trigger to avoid mole game from executing in the background in the next games
+  const hubButton = document.querySelector(".hub-button");
+  hubButton.addEventListener("click", () => {
+    clearInterval(moleInterval);
+  });
 };
