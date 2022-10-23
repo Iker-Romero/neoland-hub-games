@@ -521,6 +521,7 @@ footer img {
     background-color: black;
     border-radius: 50%;
     font-size: calc(80vh / 6);
+    /* Prevent the user from selecting the emoji as text instead of trigger the "click" event */
     user-select: none;
   }
 }
@@ -542,6 +543,8 @@ footer img {
     background-color: black;
     border-radius: 50%;
     font-size: calc(60vw * 2 / 9);
+    /* Prevent the user from selecting the emoji as text instead of trigger the "click" event */
+    user-select: none;
   }
 }
 
