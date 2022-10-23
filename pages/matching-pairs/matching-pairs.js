@@ -1,6 +1,5 @@
 import { insertCards } from "./insert-cards";
 import { disorder } from "../quiz-ride/disorder-test";
-import { insertFruits } from "./insert-fruits";
 
 export const matchingPairs = () => {
   const template = `
