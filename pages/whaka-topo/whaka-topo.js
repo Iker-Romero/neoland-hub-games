@@ -35,7 +35,6 @@ export const whakaTopo = () => {
   let score = 0;
 
   let count = document.querySelector(".score-count");
-  console.log(count);
 
   const limit = 1000;
 
@@ -65,8 +64,6 @@ export const whakaTopo = () => {
       hole.insertAdjacentHTML("beforeend", topo);
 
       hole.addEventListener("click", () => {
-        console.log("click");
-
         score++;
 
         count.innerHTML = score;
@@ -78,7 +75,6 @@ export const whakaTopo = () => {
       });
 
       count.innerHTML = score;
-      console.log(count);
     }
   };
 
