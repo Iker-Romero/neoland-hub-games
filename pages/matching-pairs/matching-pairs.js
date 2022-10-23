@@ -1,3 +1,7 @@
+import { insertCards } from "./insert-cards";
+import { disorder } from "../quiz-ride/disorder-test";
+import { insertFruits } from "./insert-fruits";
+
 export const matchingPairs = () => {
   const template = `
   <main class="memory">
@@ -12,10 +16,10 @@ export const matchingPairs = () => {
   const target = document.querySelector("header");
   target.insertAdjacentHTML("afterend", template);
 
-  const insertSquares = () => {
-    const fruits = ["🥝", "🥥", "🍇", "🍉", "🍓", "🍑"]
-    const pairsContainer = document.querySelector(".pairs-container");
-    fruits.forEach()
-  }
-
+  const fruits = ["🥝", "🥥", "🍇", "🍉", "🍓", "🍑"];
+  const fruitsX2 = [...fruits, ...fruits];
+  const n = fruitsX2.length;
+  const randomFruits = disorder(fruitsX2);
+  
+  insertCards(randomFruits, n);
 };

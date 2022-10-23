@@ -25,18 +25,24 @@ export const hub = () => {
       <div class="game">
         <p>🪢 Hang Man 🪢</p>
       </div>
+      <div class="game">
+        <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
+      </div>
     </div>
   </main>
   `;
-  // <div class="game">
-  //   <p>🍉 Memory: Matching Pairs 👨‍🤝‍👩</p>
-  // </div>
 
   const target = document.querySelector("header");
   target.insertAdjacentHTML("afterend", template);
 
-  const gamesPages = [ticTacToe, pokeApiInit, whakaTopo, quizRide, hangMan];
-  // matchingPairs
+  const gamesPages = [
+    ticTacToe,
+    pokeApiInit,
+    whakaTopo,
+    quizRide,
+    hangMan,
+    matchingPairs,
+  ];
 
   const games = document.querySelectorAll(".game");
   games.forEach((game, i) => {
