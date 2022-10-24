@@ -3,10 +3,6 @@ export const pokemonTypes = {
     color: "#ABB842",
     icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170410/neoland-hub-games/POKE%20API/icons/bug_ifgzpb.svg"
   },
-  dark: {
-    color: "#6C594A",
-    icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170410/neoland-hub-games/POKE%20API/icons/dark_jsxae2.svg"
-  },
   dragon: {
     color: "#6D48D2",
     icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170410/neoland-hub-games/POKE%20API/icons/dragon_qqdkxo.svg"
@@ -26,10 +22,6 @@ export const pokemonTypes = {
   fire: {
     color: "#DE5C3D",
     icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170412/neoland-hub-games/POKE%20API/icons/fire_hmx4sk.svg"
-  },
-  flying: {
-    color: "#A491EA",
-    icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170412/neoland-hub-games/POKE%20API/icons/flying_fiulil.svg"
   },
   ghost: {
     color: "#6C5994",
@@ -62,10 +54,6 @@ export const pokemonTypes = {
   rock: {
     color: "#B4A14A",
     icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170414/neoland-hub-games/POKE%20API/icons/rock_icya8t.svg"
-  },
-  steel: {
-    color: "#B8B8CE",
-    icon: "https://res.cloudinary.com/dvwva99mi/image/upload/v1666170414/neoland-hub-games/POKE%20API/icons/steel_d2xb7i.svg"
   },
   water: {
     color: "#708FE9",
