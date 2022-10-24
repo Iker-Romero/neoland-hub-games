@@ -39,7 +39,11 @@ export const filterByType = () => {
 
         selectedTypes.forEach((selectedType) => {
           const add = pokemons.filter((pokemon) => {
-            return pokemon.types[0] === selectedType;
+            if (pokemon.types[0] === selectedType) {
+              return true;
+            } else {
+              return pokemon.types[1] === selectedType;
+            }
           });
 
           pokemonsByType.push(...add);
@@ -60,7 +64,11 @@ export const filterByType = () => {
         } else {
           selectedTypes.forEach((selectedType) => {
             const add = pokemons.filter((pokemon) => {
-              return pokemon.types[0] === selectedType;
+              if (pokemon.types[0] === selectedType) {
+                return true;
+              } else {
+                return pokemon.types[1] === selectedType;
+              }
             });
 
             pokemonsByType.push(...add);
